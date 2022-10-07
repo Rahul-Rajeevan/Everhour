@@ -40,9 +40,6 @@ const Home = () => {
   return (
     <div>
       <Box>
-        <Navbar/>
-      </Box>
-      <Box>
         <Flex gap="5px" width="300px" margin="auto">
           <Flex gap="5px">
             <StarIcon color="#efbc45" w={5} h={5} />

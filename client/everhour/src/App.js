@@ -3,12 +3,8 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages/Home/Home';
 import Footer from './components/Footer';
-import SignUp from './pages/Login/SignUp';
-import Login from './pages/Login/Login';
 import { Route, Routes } from 'react-router-dom';
 import Pricing from './pages/Pricing/Pricing';
-import LoginForm from './components/LoginForm';
-import LoginProject from './components/LoginProject';
 import Asana from './integrations/Asana';
 import ClickUp from './integrations/ClickUp';
 import BaseCamp from './integrations/BaseCamp';
@@ -16,20 +12,27 @@ import Trello from './integrations/Trello';
 import Time from './pages/Project/Times';
 import Demo from './pages/Home/Demo';
 import Times from './pages/Project/Times';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Confirmmail from './pages/Confirmmail';
+import Details from './pages/Project/Details';
+import Details2 from './pages/Project/Details2';
 
 function App() {
+  let token=localStorage.getItem("token")
   return (
     <div className="App">
      {/* <Time/> */}
-      {/* <Navbar/> */}
+      {!token&&<Navbar/>}
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<SignUp/>}/>
         <Route path='/pricing' element={<Pricing/>}/>
         <Route path='/demo' element={<Demo/>}/>
-        <Route path='/loginDetails' element={<LoginForm/>}/>
-        <Route path='/projectDetails'element={<LoginProject/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/confirm" element={<Confirmmail/>}/>
+        <Route path="/details" element={<Details/>}/>
+        <Route path="/details2" element={<Details2/>}/>
+        <Route path="/signup" element={<Signup/>}/>
         <Route path='/integrations/asana' element={<Asana/>}/>
         <Route path='/integrations/clickup' element={<ClickUp/>}/>
         <Route path='/integrations/basecamp' element={<BaseCamp/>}/>
